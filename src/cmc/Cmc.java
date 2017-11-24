@@ -29,11 +29,11 @@ public class Cmc {
 	public Cmc(MapaInfo mapa, CmcImple cmcImple) {
 		this.mapa = mapa;
 		this.cmcImple = cmcImple;		
-		obtenerCaminoMinimoVoraz();
+		obtenerCaminoMinimo();
 		cmcImple.dibujarCamino(caminoMinimoVoraz);
 	}
 	
-	private void obtenerCaminoMinimoVoraz() {
+	private void obtenerCaminoMinimo() {
 		Punto a = null;
 		Punto b = null;
 		caminoMinimoVoraz = new ArrayList<Punto>();
@@ -44,7 +44,7 @@ public class Cmc {
 			a = iter.next();
 			while (iter.hasNext()) {
 				b = iter.next();
-				expandirPuntosContiguos(a, b);
+				expandirPuntosContiguosVoraz(a, b);
 				calculoCaminoMinimoEntrePuntos(a,b);
 				a = b;
 			}
@@ -93,7 +93,7 @@ public class Cmc {
 */
 	
 	
-	private void expandirPuntosContiguos(Punto a, Punto b) {
+	private void expandirPuntosContiguosVoraz(Punto a, Punto b) {
 		Punto p = null;
 		
 		if (a.x < b.x) {
