@@ -29,6 +29,7 @@ public class CmcDemo {
 		mostarColeccionDeAreas();
 		mostarColeccionDePuntos();
 		demoObtenerCamino();
+		
 	}
 	
 	private void demoObtenerCamino() {
@@ -85,5 +86,9 @@ public class CmcDemo {
 			System.out.println(c + " D+: " + densidad);
 		}
 	}
+	
+	
+	
+	
 
 }
